@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+    <div class="authorLink">
+        <p>Retrouvez la liste de nos auteurs <a href="{{ path('author_list') }}">ici</a></p>
+    </div>
+
+    <div class="bookLink">
+        <p>Retrouvez la liste de nos livres <a href="{{ path('book_list') }}">ici</a></p>
+    </div>
+{% endblock %}
+

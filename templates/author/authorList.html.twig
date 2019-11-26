@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block title %}Nos auteurs{% endblock %}
+{% block style %}<link rel="stylesheet" href="{{ asset('assets/css/authorListStyle.css') }}">{% endblock %}
+
+{% block content %}
+    <nav>
+        <div class="hidden">
+
+        </div>
+        <form action="{{ path('author_bio') }}" method="get">
+            <input type="text" placeholder="Rechercher" name="word">
+
+            <input type="submit" value="envoyer">
+        </form>
+    </nav>
+<div class="body">
+    {% for author in authorList %}
+        <div class="container">
+            <a href="{{ path('author_show', {'id' : author.id}) }}">
+                <div class="imgContainer">
+                    <img src="{{ asset('assets/img/' ~ author.image ~ '.jpg') }}" alt="image" class="img">
+                </div>
+                <div class="name">
+                    <h1>{{ author.firstname }} {{ author.name }}</h1>
+                </div>
+
+                <div class="bio">
+                    <p>{{ author.biographie }}</p>
+                </div>
+
+                <div class="birthDate">
+                    <p>né le: {{ author.birthdate | date("d/M/Y") }}</p>
+                </div>
+
+                <div class="deathDate">
+                    {% if author.deathdate == null %}
+                        <p>Cet auteur est toujours vivant</p>
+                    {% else %}
+                        <p>Mort le: {{ author.deathdate | date("d/M/Y") }}</p>
+                    {% endif %}
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

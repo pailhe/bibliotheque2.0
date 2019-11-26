@@ -1,0 +1,47 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hidden{
+    width: 50%;
+}
+
+form{
+    margin: 15px 20px;
+}
+
+.body{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.imgContainer{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.img{
+    width:100%;
+}
+
+.container{
+    width: 30%;
+    border: 1px black solid;
+    text-align: center;
+    margin: 10px 0;
+    padding: 15px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+

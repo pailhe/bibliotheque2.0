@@ -1,0 +1,19 @@
+<div class="name">
+    {{ authorShow.firstname }} {{ authorShow.name }}
+</div>
+
+<div class="birthDate">
+    {{ authorShow.birthdate | date("d/m/Y") }}
+</div>
+
+<div class="bio">
+        {{ authorShow.biographie }}
+</div>
+
+<div class="deathDate">
+    {% if authorShow.deathdate == null %}
+        <p>Cet auteur est toujours vivant</p>
+    {% else %}
+        {{ authorShow.deathdate | date("d/m/Y") }}
+    {% endif %}
+</div>

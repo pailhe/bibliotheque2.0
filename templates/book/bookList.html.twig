@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title %}Nos livres{% endblock %}
+{% block style %}<link rel="stylesheet" href="{{ asset('assets/css/bookListStyle.css') }}">{% endblock %}
+
+{% block content %}
+    <nav>
+        <div class="hidden">
+
+        </div>
+        <form action="{{ path('books_by_style') }}" method="get">
+            <input type="text" placeholder="Recherche" name="word">
+            <input type="submit" value="Rechercher">
+        </form>
+    </nav>
+
+    <div class="body">
+        {% for book in bookList %}
+            <div class="container">
+                <a href="{{ path('book_show', {'id' : book.id}) }}">
+                    <div class="imgContainer">
+                        <img src="{{ asset('assets/img/' ~ book.image ~ '.jpg') }}" alt="martine" class="img">
+                    </div>
+                    <h1>{{ book.title }}</h1>
+                    <p>Nombre de pages: {{ book.nbPages }}</p>
+                    <p>Style du livre: {{ book.style }}</p>
+                    {% if book.inStock == 1 %}
+                        <p>Ce livre est disponible</p>
+                    {% else %}
+                        <p>Ce livre n'est pas disponible</p>
+                    {% endif %}
+
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

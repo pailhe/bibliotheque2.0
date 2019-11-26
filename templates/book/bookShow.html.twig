@@ -1,0 +1,8 @@
+{{ bookShow.title }}
+    {{ bookShow.nbPages }}
+    {{ bookShow.style }}
+    {% if bookShow.inStock == 1 %}
+        <p>Ce livre est disponible</p>
+    {% else %}
+        <p>Ce livre n'est pas disponible</p>
+    {% endif %}
