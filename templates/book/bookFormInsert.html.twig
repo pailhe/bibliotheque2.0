@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <form action="{{ path('book_insert') }}" method="post">
+        <label for="image"> Nom de l'image:
+            <input id="image" type="text" name="image" required>
+        </label>
+        <div>
+            <h4>En Stock?</h4>
+            <label for="oui"> oui
+                <input  id="oui" type="radio" name="inStock" value="1" required>
+            </label>
+            <label for="non"> non
+                <input  id="non" type="radio" name="inStock" value="0" required>
+            </label>
+        </div>
+
+        <label for="nbPages"> Nombre de pages:
+            <input  id="nbPages" type="text" name="nbPages" required>
+        </label>
+        <label for="style"> Style:
+            <input  id="style" type="text" name="style" required>
+        </label>
+        <label for="title"> Titre:
+            <input  id="title" type="text" name="title" required>
+        </label>
+        <input type="submit" value="Rechercher">
+    </form>
+
+
+{% endblock %}

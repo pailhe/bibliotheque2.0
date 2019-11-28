@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block style %}
+    <link rel="stylesheet" href="{{ asset('assets/css/bookListStyle.css') }}">{% endblock %}
+
+{% block content %}
+<p>Votre livre a bien été enregistré: </p><br>
+<div class="container">
+<h1>{{ bookInsert.title }}</h1>
+
+<div class="imgContainer">
+    <img class="img" src="{{ asset('assets/img/' ~ bookInsert.image ~ '.jpg') }}" alt="image">
+</div>
+<p>{{ bookInsert.nbPages }}</p>
+<p>{{ bookInsert.style }}</p>
+{% if bookInsert.inStock == 0 %}
+    <p>Ce livre n'est pas disponible</p>
+{% else %}
+    <p>Ce livre est disponible</p>
+{% endif %}
+</div>
+{% endblock %}

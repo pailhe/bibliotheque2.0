@@ -1,0 +1,6 @@
+{# Je crée le html de mon formulaire en utilisant la fonction
+form () avec en parmetre ma variable de formulaire #}
+{{ form(bookFormView) }}
+{% if message is defined %}
+    {{ message }}
+{% endif %}

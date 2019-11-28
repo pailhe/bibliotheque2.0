@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block style %}
+    <link rel="stylesheet" href="{{ asset('assets/css/bookListStyle.css') }}">{% endblock %}
+
+{% block content %}
+    <p>Votre livre a bien été enregistré: </p><br>
+    <div class="container">
+        <h1>{{ authorInsert.firstname }} {{ authorInsert.name }}</h1>
+
+        <div class="imgContainer">
+            <img class="img" src="{{ asset('assets/img/' ~ authorInsert.image ~ '.jpg') }}" alt="image">
+        </div>
+        <p>{{ authorInsert.biographie }}</p>
+        <p>né le: {{ authorInsert.birthdate | date ('d/m/Y') }}</p>
+        {% if authorInsert.deathdate == null %}
+            <p>Cet auteur est toujours vivant</p>
+        {% else %}
+            <p>Cet auteur est mort le : {{ authorInsert.deathdate | date ('d/m/Y') }}</p>
+        {% endif %}
+    </div>
+{% endblock %}

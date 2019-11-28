@@ -39,6 +39,8 @@
                         <p>Mort le: {{ author.deathdate | date("d/M/Y") }}</p>
                     {% endif %}
                 </div>
+                <a href="{{ path('author_delete', {'id' : author.id}) }}">Supprimer</a>
+                <a href="{{ path('author_form_update', {'id' : author.id}) }}">Modifier</a>
             </a>
         </div>
     {% endfor %}

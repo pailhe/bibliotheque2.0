@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <form action="{{ path('author_insert') }}" method="post">
+        <label for="image"> Nom de l'image:
+            <input id="image" type="text" name="image" required>
+        </label>
+        <label for="biographie"> Biographie:
+            <input  id="biographie" type="text" name="biographie" required>
+        </label>
+        <label for="birthdate"> Date de naissance:
+            <input  id="birthdate" type="date" name="birthdate" required>
+        </label>
+        <label for="deathdate"> Date de mort:
+            <input  id="deathdate" type="date" name="deathdate">
+        </label>
+        <label for="firstname"> Prénom:
+            <input  id="firstname" type="text" name="firstname" required>
+        </label>
+        <label for="name"> Nom de famille:
+            <input  id="name" type="text" name="name" required>
+        </label>
+        <input type="submit" value="Rechercher">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <form action="{{ path('author_update', {'id' : author.id}) }}" method="post">
+        <label for="image"> Nom de l'image:
+            <input id="image" type="text" name="image" value="{{ author.image }}" required>
+        </label>
+        <label for="biographie"> Biographie:
+            <input  id="biographie" type="text" name="biographie" value="{{ author.biographie }}" required>
+        </label>
+        <label for="birthdate"> Date de naissance:
+            <input  id="birthdate" type="date" name="birthdate" value="{{ author.birthdate | date('Y-m-d') }}" required>
+        </label>
+        <label for="deathdate"> Date de décès:
+            <input  id="deathdate" type="date" name="deathdate" value="{% if author.deathdate %}{{ author.deathdate | date('Y-m-d')
+            }} {% endif %}" >
+        </label>
+        <label for="name"> Nom de famille:
+            <input  id="name" type="text" name="name" value="{{ author.name }}" required>
+        </label>
+        <label for="firstname"> Prénom:
+            <input  id="firstname" type="text" name="firstname" value="{{ author.firstname }}" required>
+        </label>
+        <input type="submit" value="Rechercher">
+    </form>
+
+
+{% endblock %}

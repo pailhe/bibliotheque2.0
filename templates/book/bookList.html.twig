@@ -28,7 +28,8 @@
                     {% else %}
                         <p>Ce livre n'est pas disponible</p>
                     {% endif %}
-
+                    <a href="{{ path('book_delete', { 'id' : book.id }) }}">Supprimer</a>
+                    <a href="{{ path('book_form_update', {'id' : book.id}) }}">Modifier</a>
                 </a>
             </div>
         {% endfor %}
